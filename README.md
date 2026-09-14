@@ -1,0 +1,29 @@
+# fusion-headroom-mer-iceir2026
+
+- `scripts/fetch_features.py`: released MOSI, MOSEI and IEMOCAP feature files, with MD5 check
+- `scripts/extract_meld_frozen.py`: frozen BERT, WavLM and CLIP features for MELD
+- `experiments/headroom.py`: fusion headroom of the matched comparisons
+- `experiments/theory_check.py`: majority-class baselines and collapse toward the majority class
+- `experiments/mosi_mosei_headroom.py`: MOSI and MOSEI: unimodal, early and late fusion
+- `experiments/mosi_mosei_midfusion.py`: MOSI and MOSEI: mid fusion
+- `experiments/mosi_mosei_report.py`: MOSI and MOSEI headroom with held-out selection
+- `experiments/paired_stats.py`: paired bootstrap interval, sign-flip permutation test, Cohen's d_z
+- `experiments/iemocap_context.py`: bi-LSTM and batching utilities
+- `experiments/meld_context.py`: MELD loader
+- `experiments/meld_headroom.py`: MELD headroom on frozen features
+- `experiments/run_synth.py`: synthetic missing-modality benchmark
+- `experiments/synth_kappa_report.py`: case-study margins
+- `src/uacmd/__init__.py`: package
+- `src/uacmd/metrics.py`: accuracy, weighted and macro F1, kappa, MCC, majority-class baseline
+- `src/uacmd/baselines_recon.py`: reconstruction baseline
+- `src/uacmd/evidential.py`: evidential heads
+- `src/uacmd/gate.py`: fusion gates
+- `src/uacmd/losses.py`: alignment and distillation losses
+- `src/uacmd/masking.py`: modality availability patterns
+- `src/uacmd/models.py`: encoders, teacher, student and baselines
+- `src/uacmd/train.py`: training loops
+- `src/uacmd/data/__init__.py`: package
+- `src/uacmd/data/real.py`: MELD label order
+- `src/uacmd/data/synth.py`: synthetic tri-modal data
+- `docs/headroom-data.json`: input data
+- `src/uacmd/data/meld_priors.json`: input data

@@ -1,0 +1,175 @@
+{
+  "entries": [
+    {
+      "corpus": "SEED (EEG+eye)",
+      "modalities": {
+        "EEG_DE_FLF": 78.51,
+        "eye_31dim_FLF": 77.8
+      },
+      "fused": 87.59,
+      "metric": "accuracy",
+      "source": "Lu, Zheng, Li, Lu, IJCAI 2015 pp.1170-1176; Table 2 (eye), Table 3 (EEG), Figure 2 (fusion)",
+      "protocol": "3-class positive/neutral/negative, subject-dependent, SVM base classifiers, fuzzy-integral fusion",
+      "same_architecture": true,
+      "second_hand": false
+    },
+    {
+      "corpus": "SEED-IV (same arch, SVM)",
+      "modalities": {
+        "EEG": 70.33,
+        "eye_movements": 67.82
+      },
+      "fused": 75.88,
+      "metric": "accuracy",
+      "source": "Zheng, Liu, Lu, Lu, Cichocki, IEEE T-Cybernetics 49(3) 2019 pp.1110-1122, Table III and surrounding text",
+      "protocol": "4-class, 62 electrodes, DE features, SVM throughout; feature-level fusion",
+      "same_architecture": true,
+      "second_hand": false
+    },
+    {
+      "corpus": "SEED-IV (BDAE vs SVM)",
+      "modalities": {
+        "EEG_SVM": 70.33
+      },
+      "fused": 85.11,
+      "metric": "accuracy",
+      "source": "same paper, Table III",
+      "protocol": "unimodal SVM against multimodal deep learning - DIFFERENT architectures",
+      "same_architecture": false,
+      "second_hand": false
+    },
+    {
+      "corpus": "MELD (DialogueRNN)",
+      "modalities": {
+        "text": 57.03,
+        "audio": 41.79
+      },
+      "fused": 60.25,
+      "metric": "weighted F1",
+      "source": "Poria, Hazarika, Majumder, Naik, Cambria, Mihalcea, ACL 2019 pp.527-536, Table 11",
+      "protocol": "7-class emotion, test set, text+audio (no visual in the baselines)",
+      "same_architecture": true,
+      "second_hand": false
+    },
+    {
+      "corpus": "MELD (bcLSTM)",
+      "modalities": {
+        "text": 56.44,
+        "audio": 39.08
+      },
+      "fused": 59.25,
+      "metric": "weighted F1",
+      "source": "same paper, Table 11",
+      "protocol": "7-class emotion, test set, text+audio",
+      "same_architecture": true,
+      "second_hand": false
+    },
+    {
+      "corpus": "KEMDy20 (valence)",
+      "modalities": {
+        "audio_only": 49.0,
+        "bio_only": 52.0
+      },
+      "fused": 52.8,
+      "metric": "valence UAR",
+      "source": "SGMT with S-PACE, Mathematics 14(10):1743, 2026, Tables 8 and 10",
+      "protocol": "single held-out pair (Pair 0), audio + biosignal",
+      "same_architecture": true,
+      "second_hand": false
+    },
+    {
+      "corpus": "KEMDy20 (arousal)",
+      "modalities": {
+        "audio_only": 71.4,
+        "bio_only": 54.2
+      },
+      "fused": 69.6,
+      "metric": "arousal UAR",
+      "source": "same paper, Table 10",
+      "protocol": "single held-out pair (Pair 0)",
+      "same_architecture": true,
+      "second_hand": false
+    },
+    {
+      "corpus": "AMIGOS (valence)",
+      "modalities": {
+        "EEG": 56.4,
+        "ECG": 54.5,
+        "GSR": 52.8
+      },
+      "fused": 56.0,
+      "metric": "F1 x100",
+      "source": "Miranda-Correa, Abadi, Sebe, Patras, IEEE T-Affective Computing 2018 (arXiv:1702.02510), Table 7",
+      "protocol": "'All' scenario, Gaussian Naive Bayes per modality, decision-level fusion; random baseline 50.0",
+      "same_architecture": true,
+      "second_hand": false
+    },
+    {
+      "corpus": "AMIGOS (arousal)",
+      "modalities": {
+        "EEG": 57.7,
+        "ECG": 55.1,
+        "GSR": 54.1
+      },
+      "fused": 56.4,
+      "metric": "F1 x100",
+      "source": "same paper, Table 7",
+      "protocol": "'All' scenario, decision-level fusion",
+      "same_architecture": true,
+      "second_hand": false
+    },
+    {
+      "corpus": "MOSI (measured here)",
+      "modalities": {
+        "text": 80.113,
+        "audio": 54.6343,
+        "video": 55.7114
+      },
+      "fused": 79.488,
+      "metric": "accuracy",
+      "source": "measured in this study, experiments/mosi_mosei_headroom.py and experiments/mosi_mosei_midfusion.py; features and splits from declare-lab/multimodal-deep-learning at commit 111b401d, released with Poria et al., ACL 2017 / ICDM 2017",
+      "protocol": "binary sentiment, speaker-independent split of Poria et al. (ACL 2017), 1447 train / 752 test utterances; one bc-LSTM architecture with sequence packing for every configuration, 20 seeds, hidden 100 / dropout 0.5; fused is the best of early concatenation, late posterior averaging and per-modality encoders, and both it and the best single modality are chosen on the held-out training videos, never on test. Values to four decimals so that H matches the paper, which computes it from unrounded means",
+      "same_architecture": true,
+      "second_hand": false,
+      "first_hand": true
+    },
+    {
+      "corpus": "MOSEI (measured here)",
+      "modalities": {
+        "text": 59.0475,
+        "audio": 58.5555,
+        "video": 53.135
+      },
+      "fused": 59.7302,
+      "metric": "accuracy",
+      "source": "measured in this study, same scripts and data commit as the MOSI row",
+      "protocol": "3-class sentiment, split of Poria et al. (ACL 2017), 16188 train / 4614 test utterances; same architecture, seeds and fusion styles as the MOSI row",
+      "same_architecture": true,
+      "second_hand": false,
+      "first_hand": true
+    },
+    {
+      "corpus": "SynthMM (this study)",
+      "modalities": {
+        "text": 61.4,
+        "audio": 44.4,
+        "visual": 36.0
+      },
+      "fused": 68.7,
+      "metric": "weighted F1",
+      "source": "this repository, experiments/results/tables.md",
+      "protocol": "7-class, MELD priors, 10 seeds, U-ACMD",
+      "same_architecture": true,
+      "second_hand": false,
+      "case_study": true
+    },
+    {
+      "corpus": "DEAP",
+      "modalities": {},
+      "fused": null,
+      "metric": "",
+      "source": "Koelstra et al., IEEE T-Affective Computing 3(1) 2012, Tables 7 and 8 - both are raster images in the PDF, so the cells could not be extracted",
+      "protocol": ""
+    }
+  ]
+}
