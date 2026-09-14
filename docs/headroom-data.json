@@ -168,7 +168,7 @@
       "modalities": {},
       "fused": null,
       "metric": "",
-      "source": "Koelstra et al., IEEE T-Affective Computing 3(1) 2012, Tables 7 and 8 - both are raster images in the PDF, so the cells could not be extracted",
+      "source": "Koelstra et al., IEEE T-Affective Computing 3(1) 2012, excluded: no matched unimodal-fusion comparison identified",
       "protocol": ""
     }
   ]
